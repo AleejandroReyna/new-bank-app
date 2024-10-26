@@ -1,0 +1,1 @@
+export const Detail = () => <h1>Account Detail</h1>
