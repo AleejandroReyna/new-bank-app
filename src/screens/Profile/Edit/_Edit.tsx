@@ -1,0 +1,1 @@
+export const Edit = () => <h1>Edit Profile</h1>
