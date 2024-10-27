@@ -1,8 +1,12 @@
+// Dependencies
 import { Outlet } from "react-router-dom"
 
+// UI Components
+import { Header } from "../Header"
+
 export const Base = () => (
-  <div>
-    <h1>Dashboard</h1>
+  <div className="base-container">
+    <Header />
     <Outlet />
   </div>
 )

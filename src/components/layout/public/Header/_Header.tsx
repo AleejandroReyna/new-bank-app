@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 import { 
   Container, 
   Nav, 
-  Navbar, 
-  NavDropdown 
+  Navbar
 } from "react-bootstrap"
 
 export const Header = () => (
