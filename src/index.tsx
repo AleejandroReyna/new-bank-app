@@ -7,6 +7,9 @@ import reportWebVitals from './reportWebVitals';
 // Bootstrap dependencies
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Icons dependencies
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
