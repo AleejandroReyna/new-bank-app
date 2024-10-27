@@ -1,0 +1,1 @@
+export const List = () => <h1>Account List</h1>
