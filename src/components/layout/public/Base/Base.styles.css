@@ -1,5 +1,5 @@
-main {
-  min-height: calc(100vh - 4em);
+.base-container {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
 }
