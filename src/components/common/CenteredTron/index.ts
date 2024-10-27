@@ -1,0 +1,1 @@
+export { CenteredTron } from './_CenteredTron'
