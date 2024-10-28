@@ -6,6 +6,7 @@ import { User } from '../../utils/services/types/User';
 type UserContextType = {
   user: User | null
   signUser: (user: User) => void
+  editUser: (user: User) => void
   clearUser: () => void
 }
 
@@ -23,10 +24,11 @@ export const UserProvider = ({children} : UserProviderProps) => {
 
   // Methods
   const signUser = (user : User) => setUser(user)
+  const editUser = (user : User) => setUser(user)
   const clearUser = () => setUser(null)
 
   return (
-    <UserContext.Provider value={{user, signUser, clearUser}}>
+    <UserContext.Provider value={{user, signUser, clearUser, editUser}}>
       {children}
     </UserContext.Provider>   
   )

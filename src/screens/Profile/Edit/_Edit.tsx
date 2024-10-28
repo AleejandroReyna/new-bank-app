@@ -1,25 +1,43 @@
 // Dependencies
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { useUser } from "../../../contexts/User"
 
 // UI Components
 import { AppTitle } from "../../../components/common/AppTitle"
 import { Button, Container, Row, Col, Form, Stack } from "react-bootstrap"
 
 export const Edit = () => {
+  // Hooks
+  const { user, editUser } = useUser()
 
   // States
-  const [name, setName] = useState<string>("Erick Alejandro")
-  const [lastName, setLastName] = useState<string>("Alvarez Reyna")
-  const [phone, setPhone] = useState<string>("53535353")
-  const [email, setEmail] = useState<string>("me@alejandroreyna.com")
-  const [address, setAddress] = useState<string>("Guatemala City, Guatemala")
+  const [name, setName] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
+  const [phone, setPhone] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [address, setAddress] = useState<string>("")
   const [loading, setLoading] = useState<boolean>(false)
+
+  // Effects
+  useEffect(() => {
+    if(user) {
+      setName(user.name)
+      setLastName(user.lastName)
+      setPhone(user.phone)
+      setEmail(user.email)
+      setAddress(user.address)
+    }
+  }, [user])
+
 
   // Methods
   const submit = () => {
     setLoading(true)
-    setTimeout(() => setLoading(false), 2000)
+    setTimeout(() => {
+      editUser({name, lastName, phone, email, address})
+      setLoading(false)
+    }, 2000)
   }
   return (
     <>
