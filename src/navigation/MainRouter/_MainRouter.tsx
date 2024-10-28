@@ -14,6 +14,7 @@ import { Edit as EditProfile } from "../../screens/Profile/Edit";
 import { List as Accounts } from "../../screens/Accounts/List";
 import { Detail as AccountDetail } from "../../screens/Accounts/Detail";
 import { New as NewAccount } from "../../screens/Accounts/New";
+import { Transfer } from "../../screens/Transfer";
 
 export const MainRouter = () => (
     <BrowserRouter>
@@ -29,6 +30,7 @@ export const MainRouter = () => (
                 <Route path="accounts" Component={Accounts} />
                 <Route path="accounts/:account-id" Component={AccountDetail} />
                 <Route path="accounts/new" Component={NewAccount} />
+                <Route path="transfer" Component={Transfer} />
             </Route>
         </Routes>
     </BrowserRouter>
