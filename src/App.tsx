@@ -3,9 +3,14 @@ import './App.css';
 // Navigation
 import { MainRouter } from './navigation/MainRouter';
 
+// Providers
+import { UserProvider } from './contexts/User';
+
 function App() {
   return (
-    <MainRouter />
+    <UserProvider>
+      <MainRouter />
+    </UserProvider>
   );
 }
 
