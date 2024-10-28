@@ -25,7 +25,7 @@ export const Edit = () => {
     <>
       <AppTitle title="Edit Profile">
         <Link to='/profile'>
-          <Button type="button" role="button">Back to Profile</Button>
+          <Button type="button" role="button" variant="light">Back to Profile</Button>
         </Link>
       </AppTitle>
       <Form>
