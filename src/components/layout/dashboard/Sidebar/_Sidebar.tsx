@@ -25,6 +25,9 @@ export const Sidebar = () => (
         <Nav.Item>
           <Nav.Link  as={Link} to="/accounts/new"><i className="bi bi-plus-circle"></i> New Account</Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link  as={Link} to="/transfer"><i className="bi bi-cash"></i> Transfer</Nav.Link>
+        </Nav.Item>
       </Nav>
     </aside>
   </Nav>
