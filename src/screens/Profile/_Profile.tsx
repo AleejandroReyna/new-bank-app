@@ -9,7 +9,7 @@ export const Profile = () => (
   <>
   <AppTitle title="Profile">
     <Link to='/profile/edit'>
-      <Button type="button" role="button">Edit Profile</Button>
+      <Button type="button" role="button" variant="light">Edit Profile</Button>
     </Link>
   </AppTitle>
   <Container  className="mt-5">
