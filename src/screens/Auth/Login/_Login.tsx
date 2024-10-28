@@ -1,12 +1,15 @@
 // Dependencies
 import { useState } from "react"
 import { MockLogin } from "../../../utils/services/mocks/login"
+import { useNavigate } from 'react-router-dom'
 
 // UI Components
 import { Link } from "react-router-dom"
 import { Button, Card, Form, Container, Row, Col } from "react-bootstrap"
 
 export const Login = () => {
+    // hooks
+    const navigate = useNavigate()
     
     // States
     const [user, setUser] = useState<string>("")
@@ -18,6 +21,7 @@ export const Login = () => {
         setLoading(true)
         try {
             const response = await MockLogin(user, password)
+            navigate('/accounts')
             console.log('r', response)
         } catch (err) {
             console.log('e', err)
