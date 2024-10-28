@@ -3,6 +3,7 @@ import { useState } from "react"
 import { MockLogin } from "../../../utils/services/mocks/login"
 import { authenticate } from "../../../utils/services/mocks/authenticate"
 import { useNavigate } from 'react-router-dom'
+import { useUser } from "../../../contexts/User"
 
 // UI Components
 import { Link } from "react-router-dom"
@@ -11,6 +12,7 @@ import { Button, Card, Form, Container, Row, Col } from "react-bootstrap"
 export const Login = () => {
     // hooks
     const navigate = useNavigate()
+    const { signUser } = useUser()
     
     // States
     const [user, setUser] = useState<string>("")
@@ -23,6 +25,7 @@ export const Login = () => {
         try {
             const response = await MockLogin(user, password)
             await authenticate(response.user)
+            signUser(response.user)
             navigate('/accounts')
         } catch (err) {
             console.log('e', err)
