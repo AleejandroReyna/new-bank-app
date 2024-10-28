@@ -1,11 +1,15 @@
 // Dependencies
 import { Link } from "react-router-dom"
+import { useUser } from "../../contexts/User"
 
 // UI Components
 import { AppTitle } from "../../components/common/AppTitle"
 import { Button, Container, Row, Col } from "react-bootstrap"
 
-export const Profile = () => (
+export const Profile = () => {
+  // Hooks
+  const { user } = useUser()
+  return (
   <>
   <AppTitle title="Profile">
     <Link to='/profile/edit'>
@@ -16,25 +20,25 @@ export const Profile = () => (
     <Row>
       <Col xs="12">
         <span>Name: </span>
-        <p>Erick Alejandro</p>
+        <p>{user?.name}</p>
       </Col>
       <Col xs="12">
         <span>Last Name: </span>
-        <p>Alvarez Reyna</p>
+        <p>{user?.lastName}</p>
       </Col>
       <Col xs="12">
         <span>Phone number: </span>
-        <p>53535353</p>
+        <p>{user?.phone}</p>
       </Col>
       <Col xs="12">
         <span>email: </span>
-        <p><a href="mailto:me@alejandroreyna.com">me@alejandroreyna.com</a></p>
+        <p><a href={`mailto:${user?.email}`}>{user?.email}</a></p>
       </Col>
       <Col xs="12">
         <span>Address: </span>
-        <p>Guatemala City, Guatemala</p>
+        <p>{user?.address}</p>
       </Col>
     </Row>
   </Container>
   </>
-)
+)}
