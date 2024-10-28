@@ -1,6 +1,7 @@
 // Dependencies
 import { useState } from "react"
 import { MockLogin } from "../../../utils/services/mocks/login"
+import { authenticate } from "../../../utils/services/mocks/authenticate"
 import { useNavigate } from 'react-router-dom'
 
 // UI Components
@@ -21,8 +22,8 @@ export const Login = () => {
         setLoading(true)
         try {
             const response = await MockLogin(user, password)
+            await authenticate(response.user)
             navigate('/accounts')
-            console.log('r', response)
         } catch (err) {
             console.log('e', err)
         }
